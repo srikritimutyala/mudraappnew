@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // HomeScreen.js
 import React, { useState } from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
@@ -60,5 +61,17 @@ const HomeScreen = ({ onStart }) => {
     </div>
   );
 };
+=======
+// LandingScreen.js
+import React from 'react';
+
+const HomeScreen = ({ onStart }) => (
+  <div style={{ display: 'flex', height: '100vh', justifyContent: 'center', alignItems: 'center' }}>
+    <button onClick={onStart} style={{ padding: '20px', fontSize: '20px' }}>
+     other stuff
+    </button>
+  </div>
+);
+>>>>>>> 27aa85814958c0eb95dd4816ef2f9336c063889b
 
 export default HomeScreen;
