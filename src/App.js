@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import HomeScreen from './HomeScreen';
+import Learning from './Learning';
 
-function App() {
+const App = () => {
+  const [currentScreen, setCurrentScreen] = useState("home"); // 'home' or 'learning'
+
+  const startLearning = () => {
+    setCurrentScreen("learning");
+  };
+
+  const returnToHome = () => {
+    setCurrentScreen("home");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {currentScreen === "home" ? (
+        <HomeScreen onStart={startLearning} />
+      ) : (
+        <Learning onFinish={returnToHome} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
